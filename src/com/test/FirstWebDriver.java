@@ -1,10 +1,15 @@
 package com.test;
 
 import java.util.List;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.server.SeleniumServer;
+
+import com.thoughtworks.selenium.DefaultSelenium;
 
 public class FirstWebDriver {
 
@@ -54,7 +59,7 @@ public class FirstWebDriver {
 			break;
 		}
 		
-
+		
 		
 
 		/*
@@ -79,6 +84,16 @@ public class FirstWebDriver {
 
 	}
 
+	@After 
+	public void teraDown(){
+		
+		DefaultSelenium selenium = new DefaultSelenium("localhost", 4444, "firefox", "http://localhost:4444");
+		System.out.println("closing selenium server");
+		
+		selenium.stop();
+		selenium.shutDownSeleniumServer();
+	}
+	
 	/*
 	 * @After public void Terminate() throws Exception {
 	 * 

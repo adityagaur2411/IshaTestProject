@@ -30,8 +30,8 @@ public class GetDesiredDriver {
 			ds = DesiredCapabilities.firefox();
 			break;
 		
-		case "remote execution":
-			break;
+//		case "remote execution":
+//			break;
 
 		default:
 			ds = DesiredCapabilities.firefox();
